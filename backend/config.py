@@ -12,7 +12,6 @@ class Config:
     INFLUXDB_ORG = os.getenv("INFLUXDB_ORG", "WeekendDevelopment")
     INFLUXDB_BUCKET = os.getenv("INFLUXDB_BUCKET", "FiForesightBucket")
     SERP_API_KEY = os.getenv("SERP_API_KEY")
-    GOOGLE_GENAI_API_KEY = os.getenv("GOOGLE_GENAI_API_KEY")
     GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
     PORT = int(os.getenv("PORT", 8000))
 

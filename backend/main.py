@@ -314,9 +314,7 @@ async def debug():
         "yfinance_installed":   YFINANCE_AVAILABLE,
         "ml_models_available":  MODELS_AVAILABLE,
         "serp_api_key_set":     bool(Config.SERP_API_KEY),
-        "gemini_key_set":       bool(Config.GOOGLE_GENAI_API_KEY),
         "groq_key_set":         bool(Config.GROQ_API_KEY),
-        "xai_key_set":          bool(Config.XAI_API_KEY),
         "influxdb_token_set":   bool(Config.INFLUXDB_TOKEN),
     }
 
