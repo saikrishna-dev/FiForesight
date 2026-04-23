@@ -142,10 +142,10 @@ const ANALYZING_MSGS = [
 const LEGACY_STORAGE_KEY = 'fiforesight_simulation';
 
 // Environment is baked in at build time via NEXT_PUBLIC_APP_ENV.
-// local = dev machine, preview = staging deploy, live = production.
+// local = dev machine; preview + live share the same simulation pool.
 const SIM_ENV: string = (() => {
   const e = process.env.NEXT_PUBLIC_APP_ENV;
-  return e === 'live' ? 'live' : e === 'preview' ? 'preview' : 'local';
+  return (e === 'live' || e === 'preview') ? 'live' : 'local';
 })();
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
@@ -587,9 +587,8 @@ export default function SimulationPage() {
                 Saved simulations ({SIM_ENV})
               </Typography>
               <Chip label={SIM_ENV} size="small" sx={{
-                background: SIM_ENV === 'live' ? 'rgba(16,185,129,0.15)' :
-                            SIM_ENV === 'preview' ? 'rgba(245,158,11,0.15)' : 'rgba(0,242,255,0.12)',
-                color: SIM_ENV === 'live' ? '#10b981' : SIM_ENV === 'preview' ? '#f59e0b' : '#00f2ff',
+                background: SIM_ENV === 'live' ? 'rgba(16,185,129,0.15)' : 'rgba(0,242,255,0.12)',
+                color: SIM_ENV === 'live' ? '#10b981' : '#00f2ff',
                 fontSize: 11, fontWeight: 700,
               }} />
             </Stack>
