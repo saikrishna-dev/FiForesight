@@ -175,7 +175,7 @@ export default function QuantumDashboard() {
             <Box>
               <Typography variant="h4" sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                 <BrainCircuit size={32} color={primaryColor} />
-                FiForesight <Box component="span" sx={{ color: 'secondary.main' }}>QUANTUM</Box>
+                FiForesight
               </Typography>
             </Box>
 
